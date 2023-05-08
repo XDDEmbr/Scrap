@@ -4,8 +4,7 @@ import pandas as pd
 from time import sleep
 import streamlit as st
 import plotly.express as px
-from utils.scrap import Scarp
-from utils.auth import login_warning
+from utils.def_scrap import Scarp
 
 html_temp = """
                     <div style="background-color:{};padding:1px">
@@ -182,7 +181,5 @@ def scarp_main():
                 st.plotly_chart(fig, theme="streamlit", use_container_width=True)
 
 if __name__ == '__main__':
-    if st.session_state.authentication_status:
         scarp_main()
-    elif st.session_state.authentication_status == None:
-        login_warning()       
+       
