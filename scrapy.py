@@ -106,7 +106,7 @@ def scarp_main():
                 final = add_in_paper_repo(papername,year,author,cite,publication,link)
 
                 # use sleep to avoid status code 429
-                sleep()
+                sleep(100)
         
             final['Year'] = final['Year'].astype('int')
             final['Citation'] = final['Citation'].apply(Scarp.cite_number).astype('int')
